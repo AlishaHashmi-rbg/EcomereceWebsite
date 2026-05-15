@@ -1,0 +1,5 @@
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; padding: 0; background: #f9fafb; }
+a { text-decoration: none; }
+button { font-family: inherit; }
+input, select, textarea { font-family: inherit; }
