@@ -110,7 +110,14 @@ const AdminPage: React.FC = () => {
   useEffect(() => {
     setStatsLoading(true);
     adminAPI.getStats()
-      .then(setStats)
+  .then((data) => setStats({
+    totalUsers: data.totalUsers,
+    totalProducts: data.totalProducts,
+    totalOrders: data.totalOrders,
+    totalRevenue: data.totalRevenue,
+    recentOrders: data.recentOrders,
+   lowStockProducts: (data as any).lowStockProducts || [],
+  }))
       .catch(() => showToast('Failed to load stats', false))
       .finally(() => setStatsLoading(false));
   }, []);
